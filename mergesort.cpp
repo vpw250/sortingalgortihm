@@ -25,45 +25,46 @@ void merge(int array[], int x, int y, int z)
 	i = 0; 
 	j = 0; 
 	k = x; 
-	while (i < a && j < a1) {
-		if (X[i] <= Z[j]) {
-			array[k] = X[i];
-			i++;
-		}
-		else {
-			array[k] = Z[j];
-			j++;
-		}
-		k++;
-	}
-
-	
-	while (i < a) {
+	while (i < a && j < a1) 
+	{
+		if (X[i] <= Z[j])
+	{
 		array[k] = X[i];
 		i++;
-		k++;
+		}
+		else
+		{
+		array[k] = Z[j];
+		j++;
+	}
+	k++;
 	}
 
 	
-	while (j < a1) {
-		array[k] = Z[j];
-		j++;
-		k++;
+	while (i < a)
+	{
+	array[k] = X[i];
+	i++;
+	k++;
+	}
+
+	
+	while (j < a1) 
+	{
+	array[k] = Z[j];
+	j++;
+	k++;
 	}
 }
-
-
 void mergeSort(int array[], int x, int z)
 {
-	if (x < z) {
+	if (x < z)
+	{
 		
-		int y = x + (z - x) / 2;
-
-		
-		mergeSort(array, x, y);
-		mergeSort(array, y + 1, z);
-
-		merge(array, x, y, z);
+	int y = x + (z - x) / 2;
+	mergeSort(array, x, y);
+	mergeSort(array, y + 1, z);
+	merge(array, x, y, z);
 	}
 }
 
@@ -71,14 +72,14 @@ void printArray(int Arr[], int size)
 {
 	int i;
 	for (i = 0; i < size; i++)
-		printf("%d ", Arr[i]);
+	printf("%d ", Arr[i]);
 	printf("\n");
 }
 
 
 int main()
 {
-	int A[] = { 12, 11, 13, 5, 6, 7 };
+	int A[] = { 3,1,4,1,5,9,2,6,5,3,5 };
 	int A_size = sizeof(A) / sizeof(A[0]);
 
 	printf("Given array is \n");
